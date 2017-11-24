@@ -8,13 +8,15 @@
 
     <net.angrycode.library.TouchButton
         android:id="@+id/touch_btn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:tb_text="Hold"
-        app:tb_color="@color/colorAccent"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_centerInParent="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tb_color="@color/colorAccent"
+        app:tb_text="Hold" />
 
 </android.support.constraint.ConstraintLayout>

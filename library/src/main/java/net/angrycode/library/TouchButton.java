@@ -28,6 +28,7 @@ public class TouchButton extends View {
 
     private float mCenterX, mCenterY;
 
+    private float mRingRadius;
     private float mRadius;
     private float mAnimPadding;
 
@@ -139,13 +140,17 @@ public class TouchButton extends View {
                 height = dip2px(getContext(), 80);
                 break;
         }
-        setMeasuredDimension(width, height);
+        mRadius = Math.min(width, height) / 2;
+        mRingRadius = mRadius + mAnimPadding;
+
+        width = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke * 0.5);
+        height = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke * 0.5);
 
         mCenterX = width / 2;
         mCenterY = height / 2;
 
-        mRadius = Math.max(width, height) / 2 - mAnimPadding;
-
+        Log.e(TAG, "width:" + width + ",height:" + height);
+        setMeasuredDimension(width, height);
     }
 
     @Override
@@ -178,7 +183,7 @@ public class TouchButton extends View {
 
     private void drawRing(Canvas canvas) {
         mPath.reset();
-        mPath.addCircle(mCenterX, mCenterY, mRadius, Path.Direction.CW);
+        mPath.addCircle(mCenterX, mCenterY, mRingRadius, Path.Direction.CW);
         mPaint.setStyle(Paint.Style.STROKE);
         mCurrentValue = mCurrentValue + mAnimatorValue;
         Log.d(TAG, "current:" + mCurrentValue);
