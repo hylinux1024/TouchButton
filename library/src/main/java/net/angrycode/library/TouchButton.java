@@ -78,10 +78,13 @@ public class TouchButton extends View {
         mBtnBackground = attributes.getColor(R.styleable.TouchButton_tb_color, ContextCompat.getColor(context, R.color.colorRed));
         mTextColor = attributes.getColor(R.styleable.TouchButton_tb_text_color, ContextCompat.getColor(context, android.R.color.white));
         mText = attributes.getString(R.styleable.TouchButton_tb_text);
+        mAnimPadding = attributes.getDimension(R.styleable.TouchButton_tb_anim_padding, dip2px(getContext(), 10));
         attributes.recycle();
 
-        mAnimPadding = dip2px(getContext(), 10);
-        mDefaultStroke = dip2px(getContext(), 8);
+        mDefaultStroke = mAnimPadding / 2;
+
+//        mAnimPadding = dip2px(getContext(), 10);
+//        mDefaultStroke = dip2px(getContext(), 8);
         mCurrentValue = mDefaultStroke;
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
@@ -197,7 +200,7 @@ public class TouchButton extends View {
         mPaint.setStyle(Paint.Style.FILL);
         canvas.drawPath(mPath, mPaint);
         //draw text
-        float x = (getWidth() - mTextWidth) / 2;
+        float x = (getMeasuredWidth() - mTextWidth) / 2;
         float y = mCenterY + mTextSize / 3;
         canvas.drawText(mText, x, y, mTextPaint);
     }
