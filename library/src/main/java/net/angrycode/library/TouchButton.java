@@ -146,8 +146,8 @@ public class TouchButton extends View {
         mRadius = Math.min(width, height) / 2;
         mRingRadius = mRadius + mAnimPadding;
 
-        width = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke * 0.5);
-        height = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke * 0.5);
+        width = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke);
+        height = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke);
 
         mCenterX = width / 2;
         mCenterY = height / 2;
