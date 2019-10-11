@@ -8,8 +8,8 @@
 
     <net.angrycode.library.TouchButton
         android:id="@+id/touch_btn"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
         android:layout_centerInParent="true"
         app:tb_anim_padding="14dp"
         app:tb_color="@color/colorAccent"

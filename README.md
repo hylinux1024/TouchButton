@@ -4,7 +4,7 @@
 
 ### 效果图预览
 
-![效果图](http://angrycode.qiniudn.com/20171125_133242.gif)
+![效果图](https://wx4.sinaimg.cn/large/5f90ffefgy1g7u1lwmyzjg20f40qoqv6.gif)
 
 ### 用法
 

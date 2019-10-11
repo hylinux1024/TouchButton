@@ -70,7 +70,7 @@ public class TouchButton extends View {
         init(context, attrs, defStyleAttr);
     }
 
-    final ValueAnimator valueAnimator = ValueAnimator.ofFloat(0.5F, -0.5F);
+    final ValueAnimator valueAnimator = ValueAnimator.ofFloat(0.8F, -0.8F);
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
@@ -108,7 +108,7 @@ public class TouchButton extends View {
                 invalidate();
             }
         });
-        valueAnimator.setDuration(1500);
+        valueAnimator.setDuration(900);
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
 
         mTextWidth = mTextPaint.measureText(mText);
@@ -146,8 +146,8 @@ public class TouchButton extends View {
         mRadius = Math.min(width, height) / 2;
         mRingRadius = mRadius + mAnimPadding;
 
-        width = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke);
-        height = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke);
+        width = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke*1.5);
+        height = (int) (mRingRadius * 2 + mAnimPadding + mDefaultStroke*1.5);
 
         mCenterX = width / 2;
         mCenterY = height / 2;
@@ -252,7 +252,7 @@ public class TouchButton extends View {
                 mTouchDown = false;
                 mCurrentValue = mDefaultStroke;
                 valueAnimator.cancel();
-                layout(mLeft, mTop, mRight, mBottom);
+//                layout(mLeft, mTop, mRight, mBottom);
                 postInvalidate();
                 if (mOnHoldListener != null) {
                     mOnHoldListener.onHold(false);
